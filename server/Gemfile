@@ -35,8 +35,13 @@ group :doc do
 end
 
 group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'guard-rspec'
+  gem 'rb-fsevent' if `uname` =~ /Darwin/
   gem 'rspec-rails', '~> 3.0.0'
   gem 'shotgun'
+  gem 'shoulda-matchers'
+  gem 'spring-commands-rspec'
 end
 
 # Use ActiveModel has_secure_password
