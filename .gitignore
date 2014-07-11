@@ -9,11 +9,6 @@
 /test/version_tmp/
 /tmp/
 
-## Specific to RubyMotion:
-.dat*
-.repl_history
-build/
-
 ## Documentation cache and generated files:
 /.yardoc/
 /_yardoc/
@@ -30,5 +25,10 @@ build/
 # .ruby-version
 # .ruby-gemset
 
-# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
-.rvmrc
+# Ignore the default SQLite database.
+server/db/*.sqlite3
+server/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+server/log/*.log
+server/tmp
