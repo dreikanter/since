@@ -23,7 +23,7 @@ module Since
     config.i18n.enforce_available_locales = true
 
     config.generators do |g|
-        g.test_framework :rspec
+      g.test_framework :rspec
     end
   end
 end
