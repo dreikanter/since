@@ -1,15 +1,31 @@
 class CreateTrackers < ActiveRecord::Migration
   def change
     create_table :trackers do |t|
+      # Tracker name
       t.string :name, null: false
+
+      # Extended description
       t.string :description, null: false
-      t.string :secret, null: false
+
+      # Tracker activity switch
       t.boolean :enabled, null: false, default: true
-      t.integer :period, null: false
-      t.datetime :period_start, null: false
-      t.datetime :last_notified, null: false
-      t.references :user, null: false
+
+      # Unique ID to use id hook URLs
+      t.string :secret, null: false
+
+      # Scheduling configuration in cron format
+      t.string :cron
+
+      # Last execution time
+      t.datetime :last_time
+
+      # Last notification time
+      t.datetime :last_notified
+
       t.timestamps
+
+      # Tracker is the User property
+      t.references :user, null: false
     end
   end
 end

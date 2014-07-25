@@ -14,22 +14,22 @@
 ActiveRecord::Schema.define(version: 20140713091549) do
 
   create_table "notifications", force: true do |t|
-    t.integer  "tracker_id", null: false
     t.string   "secret",     null: false
     t.datetime "created_at", null: false
+    t.integer  "tracker_id", null: false
   end
 
   create_table "trackers", force: true do |t|
     t.string   "name",                         null: false
     t.string   "description",                  null: false
-    t.string   "secret",                       null: false
     t.boolean  "enabled",       default: true, null: false
-    t.integer  "period",                       null: false
-    t.datetime "period_start",                 null: false
-    t.datetime "last_notified",                null: false
-    t.integer  "user_id",                      null: false
+    t.string   "secret",                       null: false
+    t.string   "cron"
+    t.datetime "last_time"
+    t.datetime "last_notified"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id",                      null: false
   end
 
   create_table "users", force: true do |t|
