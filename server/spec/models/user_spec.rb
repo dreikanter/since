@@ -1,3 +1,4 @@
+require 'pp'
 require 'rails_helper'
 
 RSpec.describe User, :type => :model do
@@ -29,5 +30,14 @@ RSpec.describe User, :type => :model do
 
   it 'not valid with bad email' do
     expect(build(:user, :bad_email)).not_to be_valid
+  end
+
+  context 'admin user record' do
+    # Assuming RSpec configuration preloads seed records
+    it 'should exist and be single' do
+      admin = User.where(name: ENV['ADMIN_NAME'])
+      expect(admin).to be
+      expect(admin.count).to be 1
+    end
   end
 end

@@ -16,11 +16,4 @@ RSpec.describe Tracker, :type => :model do
   it 'should not pass validation with bad secret' do
     expect(build(:tracker, :bad_secret)).not_to be_valid
   end
-
-  it 'have a correct period value' do
-    expect(build(:tracker, period: 0)).not_to be_valid
-    expect(build(:tracker, period: 0.1)).not_to be_valid
-    expect(build(:tracker, period: 365*24*10)).not_to be_valid
-    expect(build(:tracker, period: -1)).not_to be_valid
-  end
 end
