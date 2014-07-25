@@ -6,8 +6,6 @@ FactoryGirl.define do
     description { Faker::Lorem.sentence }
     secret { SecureRandom.uuid }
     enabled { true }
-    period { rand(1..365*24) }
-    period_start { Time.now }
     last_notified { Time.now }
     created_at { Time.now }
     updated_at { Time.now }
