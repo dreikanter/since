@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'dotenv'
+gem 'dotenv-rails'
 gem 'email_validator'
 
 group :doc do
